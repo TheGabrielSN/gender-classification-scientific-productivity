@@ -52,12 +52,12 @@ class SVM:
 
         return dataSet
 
-    def training(self, typeSVM="linear", test_size=0.2, random_state=28):
+    def training(self, typeSVM="linearsvc", test_size=0.2, random_state=28):
         if _mount:
             dfData = pd.read_csv("drive/MyDrive/Colab Notebooks/grupos.csv")
         else:
             try:
-                dfData = pd.read_csv("./grupos.csv")
+                dfData = pd.read_csv(r"SVM/grupos.csv")
             except:
                 raise Exception("Impossible to do training. Database not found.")
         
