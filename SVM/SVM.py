@@ -6,25 +6,22 @@ try:
     from sklearn.model_selection import train_test_split
     from nltk import classify
     from nltk.classify.scikitlearn import SklearnClassifier
+    from joblib import load, dump
 except Exception as e:
     print(e)
 
-_mount = False
-
-try:
-    from google.colab import drive
-    drive.mount('/content/drive')
-    _mount = True
-except:
-    print("Failed to mount with drive.")
-
 class SVM:
-    def __init__(self):
+    def __init__(self, model="rbf"):
         self.data = None
-        self.clf = None
+        try:
+            self.clf = load(r'SVM/Models/{}.hdf5'.format(model.lower()))
+        except:
+            self.clf = None
         self.acc = None
 
     def classify(self, value):
+        if self.clf == None:
+            raise Exception("Impossible to classify. Untrained SVM.")
         if type(value) == str:
             return self.clf.classify(self.prepareData(value,op=2))
         else:
@@ -53,13 +50,10 @@ class SVM:
         return dataSet
 
     def training(self, typeSVM="linearsvc", test_size=0.2, random_state=28):
-        if _mount:
-            dfData = pd.read_csv("drive/MyDrive/Colab Notebooks/grupos.csv")
-        else:
-            try:
-                dfData = pd.read_csv(r"SVM/grupos.csv")
-            except:
-                raise Exception("Impossible to do training. Database not found.")
+        try:
+            dfData = pd.read_csv(r"SVM/grupos.csv")
+        except:
+            raise Exception("Impossible to do training. Database not found.")
         
         names = dfData["name"].apply(lambda x: x.lower())
         classification = dfData['classification']
@@ -70,20 +64,28 @@ class SVM:
 
         if typeSVM.lower() == "linear":
             self.clf = SklearnClassifier(svm.SVC(kernel="linear", C=10.0))
+            dump(self.clf,r"SVM/Models/linear.hdf5")
         elif typeSVM.lower() == "linearsvc":
             self.clf = SklearnClassifier(svm.LinearSVC(C=1.0, max_iter=1000000))
+            dump(self.clf,r"SVM/Models/linearsvc.hdf5")
         elif typeSVM.lower() == "rbf":
             self.clf = SklearnClassifier(svm.SVC(kernel="rbf", gamma=0.01, C=100.0))
+            dump(self.clf,r"SVM/Models/rbf.hdf5")
         elif typeSVM.lower() == "nurbf":
             self.clf = SklearnClassifier(svm.NuSVC(kernel="rbf", gamma=0.01, nu=0.1))
+            dump(self.clf,r"SVM/Models/nurbf.hdf5")
         elif typeSVM.lower() == "poly":
             self.clf = SklearnClassifier(svm.SVC(kernel='poly', gamma='auto', degree=1, C=100.0))
+            dump(self.clf,r"SVM/Models/poly.hdf5")
         elif typeSVM.lower() == "nupoly":
             self.clf = SklearnClassifier(svm.NuSVC(kernel='poly', gamma='auto', degree=1, nu=0.3))
+            dump(self.clf,r"SVM/Models/nupoly.hdf5")
         elif typeSVM.lower() == "sigmoid":
             self.clf = SklearnClassifier(svm.SVC(kernel='sigmoid', gamma=0.01, C=0.01))
-        elif typeSVM.lower() == "sigmoid":
+            dump(self.clf,r"SVM/Models/sigmoid.hdf5")
+        elif typeSVM.lower() == "nusigmoid":
             self.clf = SklearnClassifier(svm.NuSVC(kernel='sigmoid', gamma=0.01, nu=0.9))
+            dump(self.clf,r"SVM/Models/sigmoid.hdf5")
         else:
             raise Exception("SVM model not available.")
 
