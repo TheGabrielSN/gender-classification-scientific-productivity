@@ -12,17 +12,17 @@ class DataBase:
             self.createTable()
     
     def createTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2018 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2019 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2020 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2021 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, titulo text, ano text)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2018 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2019 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2020 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2021 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
     
-    def insertData(self, nome, titulo, ano):
+    def insertData(self, nome, formacao, titulo, ano):
         if type(titulo) == list:
             for item in titulo:
-                self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, titulo, ano) VALUES (?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, item, ano))
+                self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, item, ano))
         else:
-            self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, titulo, ano) VALUES (?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, item, ano))
+            self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, item, ano))
     
     def selectData(self, ano):
         query = self.cursor.execute(f"SELECT * From Data{ano}")
