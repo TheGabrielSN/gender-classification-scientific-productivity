@@ -35,3 +35,4 @@ class DataBase:
 
     def dellAll(self, ano):
         self.cursor.execute(f"DELETE FROM Data{ano}")
+        self.connection.commit()
