@@ -7,7 +7,7 @@ except Exception as e:
 class DataBase:
     def __init__(self, database="data.db", createTable=True):
         self.connection = sqlite3.connect(":memory:", check_same_thread=False)
-        self.connectionfile = sqlite3.connect(database)
+        self.connectionfile = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.cursorfile = self.connectionfile.cursor()
         if createTable:
@@ -72,5 +72,10 @@ class DataBase:
     def saveInFile(self, ano):
         df = self.__selectData(ano)
         for i in range(len(df)):
-            self.insertDataFile(df.loc[i][1], df.loc[i][2], df.loc[i][3], df.loc[i][4])
+            while True:
+                try:
+                    self.insertDataFile(df.loc[i][1], df.loc[i][2], df.loc[i][3], df.loc[i][4])
+                    break
+                except sqlite3.OperationalError:
+                    continue
         self.connectionfile.commit()
