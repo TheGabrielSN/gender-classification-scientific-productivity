@@ -79,3 +79,12 @@ class DataBase:
                 except sqlite3.OperationalError:
                     continue
         self.connectionfile.commit()
+        
+    def marge(self, data):
+        connec = sqlite3.connect(data)
+        cursor = connection.cursor()
+        anos = [2018,2019,2020,2021]
+        for ano in anos:
+            for i, _, nome_completo, formacao, titulo, ano in cursor.execute(f"SELECT * From Data{ano}"):
+                self.insertDataFile(nome_completo, formacao, titulo, ano)
+        self.connectionfile.commit()
