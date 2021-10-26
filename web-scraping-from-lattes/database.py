@@ -5,6 +5,11 @@ except Exception as e:
     print(e)
 
 class DataBase:
+    """
+    
+    Classe para a criação e manipulação de um banco de dados com a biblioteca SQLite
+    
+    """
     def __init__(self, database="data.db", createTable=True):
         self.connection = sqlite3.connect(":memory:", check_same_thread=False)
         self.connectionfile = sqlite3.connect(database, check_same_thread=False)
