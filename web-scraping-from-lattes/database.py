@@ -26,6 +26,17 @@ class DataBase:
 
 
     def insertData(self, nome, formacao, titulo, ano):
+        """
+        
+        Args:
+            nome: nome do autor do artigo
+            formacao: nível de formação acadêmica
+            titulo: título do artigo
+            ano: ano de publicação do artigo
+
+        Returns:
+
+        """
         if type(titulo) == list:
             for item in titulo:
                 self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, item, ano))
@@ -33,6 +44,17 @@ class DataBase:
             self.cursor.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, titulo, ano))
     
     def insertDataFile(self, nome, formacao, titulo, ano):
+        """
+        
+        Args:
+            nome: nome do autor 
+            formacao: nível de formação do autor 
+            titulo: titulo do artigo
+            ano: ano do artigo
+
+        Returns:
+
+        """
         if type(titulo) == list:
             for item in titulo:
                 self.cursorfile.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, item, ano))
@@ -40,6 +62,14 @@ class DataBase:
             self.cursorfile.execute(f"INSERT INTO Data{ano} (id, primeiro_nome, nome_completo, formacao, titulo, ano) VALUES (?, ?, ?, ?, ?, ?)", (None, nome.split(" ")[0], nome, formacao, titulo, ano))
 
     def selectData(self, ano):
+        """
+        
+        Args:
+            ano: 
+
+        Returns:
+
+        """
         query = self.cursorfile.execute(f"SELECT * From Data{ano}")
         cols = [column[0] for column in query.description]
         df = pd.DataFrame.from_records(data=query.fetchall(), columns=cols)
@@ -53,6 +83,14 @@ class DataBase:
         return df
 
     def __selectData(self, ano):
+        """
+        
+        Args:
+            ano: 
+
+        Returns:
+
+        """
         query = self.cursor.execute(f"SELECT * From Data{ano}")
         cols = [column[0] for column in query.description]
         df = pd.DataFrame.from_records(data=query.fetchall(), columns=cols)
@@ -66,10 +104,26 @@ class DataBase:
         return df
 
     def dellAll(self, ano):
+        """
+        
+        Args:
+            ano: 
+
+        Returns:
+
+        """
         self.cursorfile.execute(f"DELETE FROM Data{ano}")
         self.connectionfile.commit()
     
     def saveInFile(self, ano):
+        """
+        
+        Args:
+            ano: 
+
+        Returns:
+
+        """
         df = self.__selectData(ano)
         for i in range(len(df)):
             while True:
@@ -81,6 +135,14 @@ class DataBase:
         self.connectionfile.commit()
         
     def marge(self, data):
+        """
+        
+        Args:
+            data: 
+
+        Returns:
+
+        """
         connec = sqlite3.connect(data)
         cursor = connection.cursor()
         anos = [2018,2019,2020,2021]
