@@ -127,11 +127,11 @@ class DataBase:
                     continue
         self.connectionfile.commit()
         
-    def marge(self, data):
+    def merge(self, data):
         """
         
         Args:
-            data: 
+            data: base de dados a ser adicionada
 
         """
         connec = sqlite3.connect(data)
