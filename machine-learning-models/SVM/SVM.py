@@ -11,10 +11,10 @@ except Exception as e:
     print(e)
 
 class SVM:
-    def __init__(self, model="rbf"):
+    def __init__(self, model="rbf", path="SVM/Models/"):
         self.data = None
         try:
-            self.clf = load(r'SVM/Models/{}.hdf5'.format(model.lower()))
+            self.clf = load(r'{}{}.hdf5'.format(path, model.lower()))
         except:
             self.clf = None
         self.acc = None
