@@ -34,8 +34,6 @@ class DataBase:
             titulo: título do artigo
             ano: ano de publicação do artigo
 
-        Returns:
-
         """
         if type(titulo) == list:
             for item in titulo:
@@ -51,9 +49,7 @@ class DataBase:
             formacao: nível de formação do autor 
             titulo: titulo do artigo
             ano: ano do artigo
-
-        Returns:
-
+            
         """
         if type(titulo) == list:
             for item in titulo:
@@ -65,9 +61,7 @@ class DataBase:
         """
         
         Args:
-            ano: 
-
-        Returns:
+            ano: ano de publicação do artigo
 
         """
         query = self.cursorfile.execute(f"SELECT * From Data{ano}")
@@ -86,9 +80,7 @@ class DataBase:
         """
         
         Args:
-            ano: 
-
-        Returns:
+            ano: ano da publicação de um artigo
 
         """
         query = self.cursor.execute(f"SELECT * From Data{ano}")
@@ -107,9 +99,7 @@ class DataBase:
         """
         
         Args:
-            ano: 
-
-        Returns:
+            ano: ano da publicação de um artigo
 
         """
         self.cursorfile.execute(f"DELETE FROM Data{ano}")
@@ -119,9 +109,7 @@ class DataBase:
         """
         
         Args:
-            ano: 
-
-        Returns:
+            ano: ano da publicação de um artigo
 
         """
         df = self.__selectData(ano)
@@ -139,8 +127,6 @@ class DataBase:
         
         Args:
             data: 
-
-        Returns:
 
         """
         connec = sqlite3.connect(data)
