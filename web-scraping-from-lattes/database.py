@@ -10,15 +10,22 @@ class DataBase:
     Classe para a criação e manipulação de um banco de dados com a biblioteca SQLite
     
     """
-    def __init__(self, database="data.db", createTable=True):
+    def __init__(self, database="data.db"):
+        """
+        
+        Args:
+            database [string] : local do arquivo de dados, caso o arquivo seja inexistente, o mesmo será criado.
+                      padrão: data.db
+            
+
+        """
         self.connection = sqlite3.connect(":memory:", check_same_thread=False)
         self.connectionfile = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.cursorfile = self.connectionfile.cursor()
-        if createTable:
-            self.createTable()
+        self.__createTable()
     
-    def createTable(self):
+    def __createTable(self):
         self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2018 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
         self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2019 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
         self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2020 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
@@ -32,12 +39,14 @@ class DataBase:
 
     def insertData(self, nome, formacao, titulo, ano):
         """
-        
+
+        Inserção de dados na base criada na memória.
+
         Args:
-            nome: nome do autor do artigo
-            formacao: nível de formação acadêmica
-            titulo: título do artigo
-            ano: ano de publicação do artigo
+            nome [string] : nome do autor do artigo
+            formacao [string] : nível de formação acadêmica
+            titulo [string] : título do artigo
+            ano [string/int] : ano de publicação do artigo
 
         """
         if type(titulo) == list:
@@ -48,12 +57,14 @@ class DataBase:
     
     def insertDataFile(self, nome, formacao, titulo, ano):
         """
-        
+
+        Inserção de dados no arquivo fisíco.
+
         Args:
-            nome: nome do autor 
-            formacao: nível de formação do autor 
-            titulo: titulo do artigo
-            ano: ano do artigo
+            nome [string] : nome do autor 
+            formacao [string] : nível de formação do autor 
+            titulo [string] : titulo do artigo
+            ano [string/int] : ano do artigo
             
         """
         if type(titulo) == list:
@@ -64,9 +75,14 @@ class DataBase:
 
     def selectData(self, ano):
         """
-        
+
+        Seleção dos dados a partir do ano na base de dados fisíca.
+
         Args:
-            ano: ano de publicação do artigo
+            ano [string/int] : ano de publicação do artigo
+        
+        Return [DataFrame Pandas] :
+            DataFrame pandas com os dados da tabela referente ao ano.
 
         """
         query = self.cursorfile.execute(f"SELECT * From Data{ano}")
@@ -84,8 +100,13 @@ class DataBase:
     def __selectData(self, ano):
         """
         
+        Seleção de dados a partir da base de dados na memória.
+        
         Args:
-            ano: ano da publicação de um artigo
+            ano [string/int] : ano da publicação de um artigo
+        
+        Return [DataFrame Pandas] :
+            DataFrame pandas com os dados da tabela referente ao ano.
 
         """
         query = self.cursor.execute(f"SELECT * From Data{ano}")
@@ -103,8 +124,10 @@ class DataBase:
     def dellAll(self, ano):
         """
         
+        Deleta toda a tabela de dados de um ano.
+
         Args:
-            ano: ano da publicação de um artigo
+            ano [string/int] : ano da publicação de um artigo
 
         """
         self.cursorfile.execute(f"DELETE FROM Data{ano}")
@@ -113,8 +136,10 @@ class DataBase:
     def saveInFile(self, ano):
         """
         
+        Salva os dados da memória em um arquivo fisíco.
+
         Args:
-            ano: ano da publicação de um artigo
+            ano [string/ano] : ano da publicação de um artigo
 
         """
         df = self.__selectData(ano)
@@ -130,12 +155,14 @@ class DataBase:
     def merge(self, data):
         """
         
+        Junta duas base de dados fisicas.
+
         Args:
-            data: base de dados a ser adicionada
+            data [string/SQLite] : base de dados a ser adicionada.
 
         """
         connec = sqlite3.connect(data)
-        cursor = connection.cursor()
+        cursor = connec.cursor()
         anos = [2018,2019,2020,2021]
         for ano in anos:
             for i, _, nome_completo, formacao, titulo, ano in cursor.execute(f"SELECT * From Data{ano}"):

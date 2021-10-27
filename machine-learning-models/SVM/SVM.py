@@ -11,7 +11,20 @@ except Exception as e:
     print(e)
 
 class SVM:
+    """
+    
+    Classe para a criação e manipulação do SVM com as bibliotecas sklearn e nltk.
+    
+    """
     def __init__(self, model="rbf", path="SVM/Models/"):
+        """
+        
+        Args:
+            model [string] : modelo a ser utilizado.
+                   Valores disponíveis: linear, linearsvc, rbf, nurbf, poly, nupoly, sigmoid, nusigmoid.
+            path [string] : localização dos modelos, caso já exista modelos treinados. 
+
+        """
         self.data = None
         try:
             self.clf = load(r'{}{}.hdf5'.format(path, model.lower()))
@@ -20,6 +33,20 @@ class SVM:
         self.acc = None
 
     def classify(self, value):
+        """
+        
+        Classifica os dados desejados a partir do modelo definido.
+
+        Args:
+            value [string/list] : Dados a serem classificados.
+
+        Return [string/list] :
+            Resultado da classificação.
+
+        Raises:
+            Erro do tipo Exception caso não seja encontrado um modelo treinado.
+        """
+
         if self.clf == None:
             raise Exception("Impossible to classify. Untrained SVM.")
         if type(value) == str:
@@ -28,6 +55,23 @@ class SVM:
             return self.clf.classify_many(self.prepareData(value, op=1))   
 
     def prepareData(self, names, genders=0, op=0):
+        """
+        Pré-processamento dos dados para ser feita a classificação ou treinamento.
+
+        Args:
+            names [string/list] : nome(s) a ser classificados.
+            genders [int/list] : gênero referente ao nome (utilizado para o treinamento).
+                            padrão: 0
+                            valores possíveis: 0, 1
+            op [int] : Opção para utilização da função.
+                        0 - Treinamento do svm.
+                        1 - Lista de nomes para classificação.
+                        2 - Único nome para classificação.
+
+        Return [dict/list]:
+            Dicionario ou lista de dicionarios para a classificação.
+        """
+
         if type(genders) == int:
             genders = [0]*len(names)
         dataSet = list()
@@ -49,9 +93,29 @@ class SVM:
 
         return dataSet
 
-    def training(self, typeSVM="linearsvc", test_size=0.2, random_state=28):
+    def training(self, typeSVM="linearsvc", test_size=0.2, random_state=28, database="SVM/grupos.csv"):
+        """
+        Treinamento do SVM.
+
+        Args:
+            typeSVM [string] : tipo de modelo a ser utilizado.
+                        Valores disponíveis: linear, linearsvc, rbf, nurbf, poly, nupoly, sigmoid, nusigmoid.
+                        padrão: linearsvc.
+            test_size [float] : relação de divisão dos dados de teste e treinamento. Exemplo: 20% da base de dados para teste reflete em test_size=0.2.
+                        padrão: 0.2
+            random_state [int] : randomização dos dados.
+                        padrão: 28
+            database [string] : local do arquivo com os dados para o treinamento.
+                        padrão: "SVM/grupos.csv"
+        
+        Raises:
+            Erro do tipo Exception caso não seja encontrada a base de dados.
+            Erro do tipo Exception caso não seja definido uma opção valida para o tido de modelo.
+        
+        """
+
         try:
-            dfData = pd.read_csv(r"SVM/grupos.csv")
+            dfData = pd.read_csv(r""+database)
         except:
             raise Exception("Impossible to do training. Database not found.")
         
