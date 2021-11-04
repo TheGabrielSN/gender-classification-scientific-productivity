@@ -1,4 +1,4 @@
-# Gender Classification in Academic Papers
+# Inference of effect of the COVID-19 pandemic in Brazilian scientific production through deep learning
 
 
 ## Requirements 
