@@ -76,14 +76,12 @@ class SVM:
             genders = [0]*len(names)
         dataSet = list()
         for name, gender in zip(names, genders):
-            name = name.lower()
-            dictName = {'name':name,
-                        'firstChar':name[0],
-                        'lastChar':name[-1],
-                        'lastTwoChar':name[-2:],
-                        'lastThreeChar':name[-3:],
-                        'length':len(name)
-                        }
+            dictName = {}
+            for i in range(10):
+                if i>=len(name):
+                    dictName[i] = ""
+                else:
+                    dictName[i] = name[-i]
             if op == 0:
                 dataSet.append((dictName, gender))
             if op == 1:
@@ -149,7 +147,7 @@ class SVM:
             dump(self.clf,r"SVM/Models/sigmoid.hdf5")
         elif typeSVM.lower() == "nusigmoid":
             self.clf = SklearnClassifier(svm.NuSVC(kernel='sigmoid', gamma=0.01, nu=0.9))
-            dump(self.clf,r"SVM/Models/sigmoid.hdf5")
+            dump(self.clf,r"SVM/Models/nusigmoid.hdf5")
         else:
             raise Exception("SVM model not available.")
 
