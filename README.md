@@ -1,4 +1,5 @@
-# Inference of effect of the COVID-19 pandemic in Brazilian scientific production through deep learning
+# Inference of effect of the COVID-19 pandemic in Brazilian scientific production through Character-level Machine Learning 
+### Inferência do efeito da pandemia COVID-19 na produção científica brasileira por meio do Aprendizado de Máquina no nível de caracteres
 
 
 ## Requirements 
