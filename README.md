@@ -1,6 +1,10 @@
 # Inference of effect of the COVID-19 pandemic in Brazilian scientific production through Character-level Machine Learning 
 ### Inferência do efeito da pandemia COVID-19 na produção científica brasileira por meio do Aprendizado de Máquina no nível de caracteres
 
+<div>
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image1.png" width="250" height="200">
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image2.png" width="250" height="200">
+</div>
 
 ## Requirements 
 
