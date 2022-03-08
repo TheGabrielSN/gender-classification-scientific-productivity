@@ -22,7 +22,7 @@ $ pip install requirements.txt
   ### 1. For training 
    Brasil.io [click here](https://data.brasil.io/dataset/genero-nomes/nomes.csv.gz)
 
-  ### 2. For prediction
+  ### 2. For classification
    Lattes Platform scraped data [click here](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/web-scraping-from-lattes/dataLattes.csv)
 #### 📄 The format of the  file .csv: 
   | index |	primeiro_nome | nome_completo  | formacao | titulo | ano |
