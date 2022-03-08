@@ -1,5 +1,5 @@
-# Effect of the COVID-19 pandemic in Brazilian scientific production by gender through Character-level Machine Learning
-### Efeito da pandemia COVID-19 na produção científica brasileira por gênero usando Aprendizado de Máquina 
+# Scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning
+### Produtividade científica na perspectiva de gênero durante a pandemia do Covid-19: classificação e análise via aprendizado de máquina
 
 <div>
   <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image3.png" width="250" height="200">
@@ -24,6 +24,10 @@ $ pip install requirements.txt
 
   ### 2. For prediction
    Lattes Platform scraped data [click here](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/web-scraping-from-lattes/dataLattes.csv)
+#### 📄 The format of the  file .csv: 
+  | index |	primeiro_nome | nome_completo  | formacao | titulo | ano |
+  |---- |---- |----- | ----- | ------ | ------ |
+
    
 ---
 
