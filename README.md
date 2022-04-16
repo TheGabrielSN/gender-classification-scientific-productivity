@@ -6,10 +6,6 @@
   <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image4.png" width="250" height="200">
 </div>
 
-<div>
-  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image1.png" width="250" height="200">
-  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image2.png" width="250" height="200">
-</div>
 
 ## Requirements 
 
