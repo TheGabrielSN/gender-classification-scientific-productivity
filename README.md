@@ -12,6 +12,8 @@
 ```bash
 $ pip install requirements.txt
 ```
+## Bot 
+  1. [Web scraping](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/web-scraping-from-lattes)
 
 ## Dataset 🎲
 ---
