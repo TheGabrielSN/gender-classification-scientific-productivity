@@ -48,6 +48,6 @@ $ pip install requirements.txt
 
 ---
 <div>
-  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image3.png](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/graphical-abstract.png" width="550" height="500">
+  <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/graphical-abstract.png" width="550" height="500">
 </div>
 
