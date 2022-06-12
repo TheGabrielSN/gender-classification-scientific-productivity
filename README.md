@@ -6,6 +6,13 @@
   <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image4.png" width="250" height="200">
 </div>
 
+## Prerequisites
+
+What things you need to have to be able to run:
+
+  * Python 3.6 +
+  * Pip 3+
+  * VirtualEnvWrapper is recommended but not mandatory
 
 ## Requirements 
 
@@ -13,14 +20,14 @@
 $ pip install requirements.txt
 ```
 ## Bot 
-  1. [Web scraping](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/web-scraping-from-lattes)
+  * [Web scraping](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/web-scraping-from-lattes)
 
 ## Dataset 🎲
 ---
-  ### 1. For training 
+  * For training 
    Brasil.io [click here](https://data.brasil.io/dataset/genero-nomes/nomes.csv.gz)
 
-  ### 2. For classification
+  * For classification
    Lattes Platform scraped data [click here](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/web-scraping-from-lattes/dataLattes.csv)
 #### 📄 The format of the  file .csv: 
   | index |	primeiro_nome | nome_completo  | formacao | titulo | ano |
