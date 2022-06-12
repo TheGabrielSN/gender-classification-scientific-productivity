@@ -27,6 +27,11 @@ $ pip install requirements.txt
    
 ---
 
+## Trained models
+  1. [BiLSTM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/BiLSTM/Model)
+  2. [1D CNN](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/1D-CNN/Model)
+  3. [SVM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/SVM/Models)
+
 ## Results 
 
   1. [BiLSTM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/BiLSTM_Classify_Lattes.ipynb)
