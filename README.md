@@ -23,7 +23,6 @@ $ pip install requirements.txt
   * [Web scraping](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/web-scraping-from-lattes)
 
 ## Dataset 🎲
----
   * For training 
    Brasil.io [click here](https://data.brasil.io/dataset/genero-nomes/nomes.csv.gz)
 
@@ -34,15 +33,17 @@ $ pip install requirements.txt
   |---- |---- |----- | ----- | ------ | ------ |
 
    
----
+
 
 ## Trained models
-  1. [BiLSTM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/BiLSTM/Model)
-  2. [1D CNN](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/1D-CNN/Model)
-  3. [SVM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/SVM/Models)
+  * [BiLSTM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/BiLSTM/Model)
+  * [1D CNN](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/1D-CNN/Model)
+  * [SVM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/SVM/Models)
 
 ## Results 
 
-  1. [BiLSTM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/BiLSTM_Classify_Lattes.ipynb)
-  2. [1D CNN](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/CNN_Classify_Lattes.ipynb)
-  3. [SVM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/SVM_Classify_Lattes.ipynb)
+  * [BiLSTM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/BiLSTM_Classify_Lattes.ipynb)
+  * [1D CNN](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/CNN_Classify_Lattes.ipynb)
+  * [SVM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/SVM_Classify_Lattes.ipynb)
+
+---
