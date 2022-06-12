@@ -47,3 +47,7 @@ $ pip install requirements.txt
   * [SVM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/SVM_Classify_Lattes.ipynb)
 
 ---
+<div>
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image3.png](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/graphical-abstract.png" width="550" height="500">
+</div>
+
