@@ -24,15 +24,15 @@ $ pip install requirements.txt
 
 ## Dataset 🎲
   * For training 
+  
    Brasil.io [click here](https://data.brasil.io/dataset/genero-nomes/nomes.csv.gz)
 
   * For classification
+  
    Lattes Platform scraped data [click here](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/web-scraping-from-lattes/dataLattes.csv)
-#### 📄 The format of the  file .csv: 
+#### 📄 The format of the  scraped data file .csv: 
   | index |	primeiro_nome | nome_completo  | formacao | titulo | ano |
   |---- |---- |----- | ----- | ------ | ------ |
-
-   
 
 
 ## Trained models
@@ -46,6 +46,10 @@ $ pip install requirements.txt
   * [1D CNN](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/CNN_Classify_Lattes.ipynb)
   * [SVM](https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/notebooks/SVM_Classify_Lattes.ipynb)
 
+Output file format .csv
+
+ |	primeiro_nome | nome_completo  | gender |
+  |---- |---- |----- | 
 ---
 <div>
   <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/graphical-abstract.png" width="650" height="400">
