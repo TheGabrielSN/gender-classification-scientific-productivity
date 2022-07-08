@@ -2,8 +2,8 @@
 ### Produtividade científica na perspectiva de gênero durante a pandemia do Covid-19: classificação e análise via aprendizado de máquina
 
 <div>
-  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image3.png" width="250" height="200">
-  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/image4.png" width="250" height="200">
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/figures/image3.png" width="250" height="200">
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/figures/image4.png" width="250" height="200">
 </div>
 
 ## Prerequisites
@@ -52,6 +52,6 @@ Output file format .csv
   |---- |---- |----- | 
 ---
 <div>
-  <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/graphical-abstract.png" width="650" height="400">
+  <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/figures/graphical-abstract.png" width="650" height="400">
 </div>
 
