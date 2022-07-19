@@ -50,7 +50,12 @@ Output file format .csv
 
  |	primeiro_nome | nome_completo  | gender |
   |---- |---- |----- | 
+
+* Some wrong name classification:  
+[clik here](https://github.com/TheGabrielSN/gender-classification-scientific-productivity/blob/main/notebooks/results/Classifica%C3%A7%C3%A3o_incorreta_todos.csv)
 ---
+
+
 <div>
   <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/figures/graphical-abstract.png" width="650" height="400">
 </div>
