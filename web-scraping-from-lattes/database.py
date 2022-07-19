@@ -10,7 +10,7 @@ class DataBase:
     Classe para a criação e manipulação de um banco de dados com a biblioteca SQLite
     
     """
-    def __init__(self, database="data.db"):
+    def __init__(self, years, database="data.db"):
         """
         
         Args:
@@ -23,19 +23,13 @@ class DataBase:
         self.connectionfile = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.connection.cursor()
         self.cursorfile = self.connectionfile.cursor()
+        self.years = years
         self.__createTable()
     
     def __createTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2018 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2019 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2020 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS Data2021 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-
-        self.cursorfile.execute("CREATE TABLE IF NOT EXISTS Data2018 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursorfile.execute("CREATE TABLE IF NOT EXISTS Data2019 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursorfile.execute("CREATE TABLE IF NOT EXISTS Data2020 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-        self.cursorfile.execute("CREATE TABLE IF NOT EXISTS Data2021 (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
-
+        for year in self.years:
+            self.cursor.execute(f"CREATE TABLE IF NOT EXISTS Data{year} (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
+            self.cursorfile.execute(f"CREATE TABLE IF NOT EXISTS Data{year} (id INTEGER PRIMARY KEY, primeiro_nome text, nome_completo text, formacao text, titulo text, ano text)")
 
     def insertData(self, nome, formacao, titulo, ano):
         """
