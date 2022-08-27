@@ -1,4 +1,6 @@
-# Scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning
+# Brazilian scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning
+
+#### IEEE Latin America Transactions
 ### Produtividade científica na perspectiva de gênero durante a pandemia do Covid-19: classificação e análise via aprendizado de máquina
 
 <div>
