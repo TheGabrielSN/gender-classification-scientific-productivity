@@ -22,7 +22,7 @@ What things you need to have to be able to run:
 $ pip install requirements.txt
 ```
 ## Bot 
-  * [Web scraping](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/web-scraping-from-lattes)
+  * [Web scraping](https://github.com/TheGabrielSN/gender-classification-scientific-productivity/tree/main/web-scraping-from-lattes)
 
 ## Dataset 🎲
   * For training 
@@ -38,9 +38,9 @@ $ pip install requirements.txt
 
 
 ## Trained models
-  * [BiLSTM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/BiLSTM/Model)
-  * [1D CNN](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/deep-learning-models/1D-CNN/Model)
-  * [SVM](https://github.com/roscibely/Gender-Classification-in-Academic-Papers/tree/main/machine-learning-models/SVM/Models)
+  * [BiLSTM](https://github.com/TheGabrielSN/gender-classification-scientific-productivity/tree/main/machine-learning-models/deep-learning-models/BiLSTM/Model)
+  * [1D CNN](https://github.com/TheGabrielSN/gender-classification-scientific-productivity/tree/main/machine-learning-models/deep-learning-models/1D-CNN/Model)
+  * [SVM](https://github.com/TheGabrielSN/gender-classification-scientific-productivity/tree/main/machine-learning-models/SVM/Models)
 
 ## Results 
 
