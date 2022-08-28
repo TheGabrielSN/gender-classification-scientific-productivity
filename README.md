@@ -59,6 +59,6 @@ Output file format .csv
 
 
 <div>
-  <img src="https://github.com/roscibely/Gender-Classification-in-Academic-Papers/blob/main/figures/graphical-abstract.png" width="650" height="400">
+  <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/figures/graphical-abstract.png" width="650" height="400">
 </div>
 
