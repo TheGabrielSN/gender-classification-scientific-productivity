@@ -1,4 +1,4 @@
-# Brazilian scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning
+# [Brazilian scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning](https://ieeexplore.ieee.org/document/10015223/)
 
 #### IEEE Latin America Transactions
 ### Produtividade científica na perspectiva de gênero durante a pandemia do Covid-19: classificação e análise via aprendizado de máquina
@@ -61,4 +61,30 @@ Output file format .csv
 <div>
   <img src="https://github.com/TheGabrielSN/Gender-Classification-in-Academic-Papers/blob/main/figures/graphical-abstract.png" width="650" height="400">
 </div>
+
+### How to cite: 
+
+R. C. B. Rego, G. d. S. Nascimento, D. E. d. L. Rodrigues, S. M. Nascimento and V. M. L. Silva, ["Brazilian scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning,"](https://ieeexplore.ieee.org/document/10015223) in IEEE Latin America Transactions, vol. 21, no. 2, pp. 302-309, Feb. 2023, doi: 10.1109/TLA.2023.10015223.
+
+### Bibitex: 
+
+```bash
+@ARTICLE{10015223,
+
+  author={Rego, Rosana Cibely B. and Nascimento, Gabriel da Silva and Rodrigues, Davi Emmanuel de Lima and Nascimento, Samara Martins and Silva, Verônica Maria L.},
+
+  journal={IEEE Latin America Transactions}, 
+
+  title={Brazilian scientific productivity from a gender perspective during the Covid-19 pandemic: classification and analysis via machine learning}, 
+
+  year={2023},
+
+  volume={21},
+
+  number={2},
+
+  pages={302-309},
+
+  doi={10.1109/TLA.2023.10015223}}
+```
 
